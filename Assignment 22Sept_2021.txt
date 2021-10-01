@@ -1,0 +1,123 @@
+1. Using TDD find fourth largest element of an array given size greater than 5
+
+...................................................................................................
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.yash.file.FourthIndexCheck;
+
+public class TestArray {
+	private FourthIndexCheck getInt = null;
+
+	@Before
+	public void setUp() throws Exception {
+		getInt = new FourthIndexCheck();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		getInt = null;
+	}
+
+	@Test
+	public void test() {
+		int[] arr = {1,2,3,4,5,6,23,23,21,43,23};
+		int check = getInt.ReturnFourthLargest(arr);
+		assertTrue(check>5);
+	}
+
+}
+
+
+2. Using TDD count the number of duplicates elements in an array of type String of size 10
+
+..............................................................................................
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.yash.file.StringDuplicates;
+
+public class countDuplicates {
+	StringDuplicates sd = null;
+
+	@Before
+	public void setUp() throws Exception 
+	{
+		sd = new StringDuplicates();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+		sd=null;
+	}
+
+	@Test
+	public void test()
+	{
+		ArrayList<String> checkDuplicates=new ArrayList<String>();
+		checkDuplicates.add("00");
+		checkDuplicates.add("11");
+		checkDuplicates.add("22");
+		checkDuplicates.add("33");
+		checkDuplicates.add("00");
+		//System.out.println(Duplicates);
+		ArrayList<String> expected=new ArrayList<String>(Arrays.asList("00","00"));
+		ArrayList<String> check = sd.returnDuplicates(checkDuplicates,checkDuplicates.size());
+		assertEquals(expected, check);
+	}
+
+}
+
+
+
+3. Using TDD approach Count the number of prime numbers in given array
+
+
+........................................................................................................................
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.yash.file.CountPrimeNumbers;
+
+public class TestPrimes {
+	CountPrimeNumbers getPrime = null;
+	@Before
+	public void setUp() throws Exception 
+	{
+	getPrime = new CountPrimeNumbers();
+	}
+
+	@After
+	public void tearDown() throws Exception 
+	{
+	getPrime = null;
+	}
+
+	@Test
+	public void test() 
+	{
+		int[] itr = {1,12,3,16,17,9};
+		ArrayList<Integer> prime = getPrime.countPrimeNo1(itr);
+		//System.out.println(prime);
+		ArrayList<Integer> expected =new ArrayList<Integer>(Arrays.asList(1,3,17));
+		assertEquals(expected , prime);
+	}
+
+}
